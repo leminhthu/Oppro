@@ -20,9 +20,8 @@ class Component(object):
         self.supplier =""
         self.notes =""
         self.sub_component_and_quantity_list = {}
-        
-        #self.stock=0
-        #self.lot_size = 1
+        self.stock=0
+        self.lot_size = 1
              
     def set_code(self, code):
         self.code = code

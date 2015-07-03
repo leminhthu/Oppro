@@ -15,7 +15,7 @@ class MRP(object):
     def __init__(self, all_data):
         self.all_data = all_data
         
-        mps_list = self.all_data.retrieve_data(CONST_MPS_MASTERLIST, None)
+        mps_list = self.all_data.retrieve_list(CONST_MPS_MASTERLIST)
         self.requirement_list_by_time = mps_list
         
         self.all_data.add_to_masterlist(CONST_MRP_MASTERLIST, self.requirement_list_by_time)

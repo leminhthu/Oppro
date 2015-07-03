@@ -10,11 +10,11 @@ from Data_stub import Data_stub, CONST_MRP_MASTERLIST, CONST_PLANNED_ORDER_RELEA
 from MRP import MRP
 
 temp = Data_stub()
-excel_parser = Parser("/Users/shelviadwihotama/Documents/workspace/oppro/BOM.xlsx", temp, "BOM")
+excel_parser = Parser("C:\Users\le_minh_thu\Desktop\BOM1.xlsx", temp, "BOM")
 
 excel_parser.readDatafromExcel()
 
-mps_parser = Parser("/Users/shelviadwihotama/Documents/workspace/oppro/MPS.xlsx", temp, "MPS")
+mps_parser = Parser("C:\Users\le_minh_thu\Desktop\MPS.xlsx", temp, "MPS")
 mps_parser.readMPS()
 
 material_requirement_plan= MRP(temp)
