@@ -21,7 +21,12 @@ class ComponentMasterList(object):
         if component.status:
             self.finished_goods_list[new_key] = component
     
-                       
+    def get_finished_goods_list(self):
+        return self.finished_goods_list
+    
+    def get_master_list(self):
+        return self.master_list
+                      
     def isPresent(self, code):
     #check if a component is already declared previously
     
