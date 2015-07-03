@@ -29,15 +29,16 @@ FG_list = FG_dict.keys()
 for key in FG_list:
     print key
 
-#print temp.data_detail(CONST_FINISHED_GOODS_MASTERLIST)
+print temp.data_detail(CONST_FINISHED_GOODS_MASTERLIST)
 
-#print temp.data_detail(CONST_MPS_MASTERLIST)
+print temp.data_detail(CONST_MPS_MASTERLIST)
 
-#print temp.data_detail(CONST_PLANNED_ORDER_RELEASE_MASTERLIST)
+mps_details = temp.data_detail(CONST_MPS_MASTERLIST)
+print mps_details
 
-#mps_details = temp.data_detail(CONST_MPS_MASTERLIST)
-#print mps_details
+material_requirement_plan= MRP(temp)
+material_requirement_plan.process_requirement()
 
-#print temp.data_detail(CONST_MRP_MASTERLIST)
-#output =  temp.data_detail(CONST_PLANNED_ORDER_RELEASE_MASTERLIST)
-#print output
+print temp.data_detail(CONST_MRP_MASTERLIST)
+output =  temp.data_detail(CONST_PLANNED_ORDER_RELEASE_MASTERLIST)
+print output

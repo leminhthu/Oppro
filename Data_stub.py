@@ -48,8 +48,9 @@ class Data_stub(object):
     
     def retrieve_data(self, list_name, data):
         if list_name == CONST_COMPONENT_MASTERLIST:
-            return self.component_master_list.master_list[data]
-        
+            assert (data in self.component_master_list.master_list.keys()), "code not found: %r" % data
+            return self.component_master_list.master_list.get(data)
+
     def retrieve_list(self,list_name):
         if list_name == CONST_COMPONENT_MASTERLIST:
             return self.component_master_list.get_master_list()
@@ -80,5 +81,4 @@ class Data_stub(object):
             return self.mrp_masterlist.data_detail_por()
         
         elif list_name == CONST_MPS_MASTERLIST:
-            return self.mps_master_list.data_detail()
             return self.mps_master_list.data_detail()
