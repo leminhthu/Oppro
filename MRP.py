@@ -110,6 +110,11 @@ class MRP(object):
         lead_time = component.lead_time
         release_time = requirement.time - lead_time
         qty = requirement.qty
+        lot_size = component.lot_size
+        moq = component.moq
+        
+        self.update_actual_qty_lot_size(qty, lot_size)
+        self.update_actual_qty_moq(qty, moq)
         code = requirement.code
         
         order_release = Requirement()
@@ -139,6 +144,15 @@ class MRP(object):
             actual_required_qty = 0.0
             
         return actual_required_qty
+    
+    def update_actual_qty_lot_size(self, qty, lot_size):
+        remainder = qty%lot_size
+        if remainder > 0:
+            qty = qty - remainder + lot_size 
+    
+    def update_actual_qty_moq(self, qty, moq):
+        if qty < moq:
+            qty = moq
     
     def retrieve_component(self, code):
         return self.all_data.retrieve_data(CONST_COMPONENT_MASTERLIST, code)

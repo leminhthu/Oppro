@@ -21,7 +21,6 @@ material_requirement_plan= MRP(temp)
 #material_requirement_plan.process_requirement()
 
 #print temp.data_detail(CONST_COMPONENT_MASTERLIST)
-
 FG_dict = temp.retrieve_list(CONST_FINISHED_GOODS_MASTERLIST)
 
 FG_list = FG_dict.keys()
